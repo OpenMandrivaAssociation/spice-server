@@ -5,7 +5,7 @@
 %define libnamedev %mklibname %{name} -d
 
 Name:		spice-server
-Version:	0.10.1
+Version:	0.12.0
 Release:	%mkrel 1
 Summary:	Implements the SPICE protocol
 Group:		Networking/Remote access
@@ -27,18 +27,6 @@ BuildRequires:	pkgconfig(xrandr)
 BuildRequires:	libcacard-devel
 BuildRequires:	libsasl2-devel
 BuildRequires:	pkgconfig(xfixes)
-
-Patch0:		0001-server-red_memslots-drop-two-unused-functions.patch
-Patch1:		0002-server-red_memslots-use-QXLPHYSICAL-for-addresses.patch
-Patch2:		0003-server-red_worker-fix-for-case-where-ASSERT-is-compi.patch
-Patch3:		0004-server-red_memslots-don-t-assume-64-bit-environment.patch
-Patch4:		0005-server-red_worker-don-t-release-self_bitmap-unless-r.patch
-Patch5:		0006-server-reds-add-usbredir-to-recognized-channel-names.patch
-Patch6:		0007-server-mjpeg_encoder-Fix-memory-leak-for-the-inital-.patch
-Patch7:		0008-server-mjpeg_encoder-fix-wrong-size-assigned-to-dest.patch
-Patch8:		0009-spice-configure-cleanup-client-build.patch
-Patch9:		0.10.1-disable-werror.patch
-Patch10:	0.10.1-gold.patch
 
 %description
 The Simple Protocol for Independent Computing Environments (SPICE) is
@@ -91,23 +79,14 @@ using spice-server, you will need to install spice-server-devel.
 
 %prep
 %setup -q -n spice-%{version}
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
-%patch5 -p1
-%patch6 -p1
-%patch7 -p1
-%patch8 -p1
-%patch9 -p1
-%patch10 -p1
+#% patch9 -p1
+#% patch10 -p1
 
 
 %build
 autoreconf -ifv
 %configure2_5x --enable-smartcard --disable-werror
-make -C common WARN_CFLAGS='' %{?_smp_mflags}
+make -C spice-common WARN_CFLAGS='' %{?_smp_mflags}
 make -C client WARN_CFLAGS='' %{?_smp_mflags}
 %make LIBS="-lpthread"
 
