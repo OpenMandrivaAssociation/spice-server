@@ -1,0 +1,33 @@
+--- spice-0.12.0/configure.ac.bero	2013-01-16 02:36:45.277943614 +0100
++++ spice-0.12.0/configure.ac	2013-01-16 02:36:48.994899115 +0100
+@@ -25,7 +25,7 @@ m4_define([SPICE_AGE], [5])
+ AC_INIT(spice, [SPICE_MAJOR.SPICE_MINOR.SPICE_MICRO], [], spice)
+ 
+ AC_CONFIG_MACRO_DIR([m4])
+-AM_CONFIG_HEADER([config.h])
++AC_CONFIG_HEADERS([config.h])
+ AC_CONFIG_AUX_DIR(.)
+ 
+ # For automake >= 1.12
+--- spice-0.12.0/spice-common/configure.ac.bero	2013-01-16 02:37:50.698171564 +0100
++++ spice-0.12.0/spice-common/configure.ac	2013-01-16 02:37:54.392129076 +0100
+@@ -6,7 +6,7 @@ AC_INIT([spice-common],
+ 
+ AC_CONFIG_SRCDIR([common/bitops.h])
+ AC_CONFIG_MACRO_DIR([m4])
+-AM_CONFIG_HEADER([config.h])
++AC_CONFIG_HEADERS([config.h])
+ AC_CONFIG_AUX_DIR([build-aux])
+ 
+ # For automake >= 1.12
+--- spice-0.12.0/spice-common/spice-protocol/configure.ac.bero	2013-01-16 02:38:41.204590653 +0100
++++ spice-0.12.0/spice-common/spice-protocol/configure.ac	2013-01-16 02:38:45.412542197 +0100
+@@ -7,7 +7,7 @@ m4_define([SPICE_MICRO], 2)
+ AC_INIT(spice-protocol, [SPICE_MAJOR.SPICE_MINOR.SPICE_MICRO], [], spice-protocol)
+ 
+ AC_CONFIG_MACRO_DIR([m4])
+-AM_CONFIG_HEADER([config.h])
++AC_CONFIG_HEADERS([config.h])
+ 
+ AM_INIT_AUTOMAKE([dist-bzip2])
+ AM_MAINTAINER_MODE

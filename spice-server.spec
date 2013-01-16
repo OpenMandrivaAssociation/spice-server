@@ -13,6 +13,7 @@ License:	LGPLv2+
 URL:		http://www.spice-space.org/
 Source0:	http://www.spice-space.org/download/releases/spice-%{version}.tar.bz2
 Source1:	spice-xpi-client-spicec
+Patch0:		spice-automake-1.13.patch
 
 # https://bugzilla.redhat.com/show_bug.cgi?id=613529
 ExclusiveArch:	%{ix86} x86_64
@@ -80,6 +81,8 @@ using spice-server, you will need to install spice-server-devel.
 
 %prep
 %setup -q -n spice-%{version}
+%apply_patches
+mkdir spice-common/spice-protocol/m4
 #% patch9 -p1
 #% patch10 -p1
 
