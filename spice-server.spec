@@ -6,7 +6,7 @@
 
 Name:		spice-server
 Version:	0.12.0
-Release:	%mkrel 1
+Release:	2
 Summary:	Implements the SPICE protocol
 Group:		Networking/Remote access
 License:	LGPLv2+
