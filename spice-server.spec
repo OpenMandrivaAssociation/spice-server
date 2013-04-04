@@ -27,7 +27,7 @@ BuildRequires:	alsa-oss-devel openssl-devel libjpeg-devel
 BuildRequires:	pkgconfig(xrandr)
 #BuildRequires:	cegui06-devel
 BuildRequires:	libcacard-devel
-BuildRequires:	libsasl2-devel
+BuildRequires:	sasl-devel
 BuildRequires:	pkgconfig(xfixes)
 
 %description
