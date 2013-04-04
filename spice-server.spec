@@ -23,7 +23,8 @@ BuildRequires:	spice-protocol >= 0.9.1
 BuildRequires:	celt051-devel
 BuildRequires:	pixman-devel
 BuildRequires:	pythonegg(pyparsing)
-BuildRequires:	alsa-oss-devel openssl-devel libjpeg-devel
+BuildRequires:	alsa-oss-devel openssl-devel 
+BuildRequires:	jpeg-devel
 BuildRequires:	pkgconfig(xrandr)
 #BuildRequires:	cegui06-devel
 BuildRequires:	libcacard-devel
