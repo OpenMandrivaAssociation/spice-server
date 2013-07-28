@@ -1,0 +1,26 @@
+diff --git a/server/tests/Makefile.am b/server/tests/Makefile.am
+index 655bc83..c0b0a38 100644
+--- a/server/tests/Makefile.am
++++ b/server/tests/Makefile.am
+@@ -19,6 +19,8 @@ LDADD =								\
+ 	$(top_builddir)/server/libspice-server.la		\
+ 	$(NULL)
+ 
++AM_LDFLAGS = -pthread
++
+ COMMON_BASE =					\
+ 	basic_event_loop.c			\
+ 	basic_event_loop.h			\
+diff --git a/server/tests/Makefile.in b/server/tests/Makefile.in
+index 5912c6d..30041ad 100644
+--- a/server/tests/Makefile.in
++++ b/server/tests/Makefile.in
+@@ -201,7 +201,7 @@ am__v_CC_1 =
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+-	$(AM_LDFLAGS) $(LDFLAGS) -o $@
++	$(AM_LDFLAGS) $(LDFLAGS) -pthread -o $@	
+ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
+ am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
+ am__v_CCLD_0 = @echo "  CCLD    " $@;

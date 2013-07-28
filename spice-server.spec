@@ -5,15 +5,15 @@
 %define libnamedev %mklibname %{name} -d
 
 Name:		spice-server
-Version:	0.12.0
-Release:	3
+Version:	0.12.4
+Release:	1
 Summary:	Implements the SPICE protocol
 Group:		Networking/Remote access
 License:	LGPLv2+
 URL:		http://www.spice-space.org/
 Source0:	http://www.spice-space.org/download/releases/spice-%{version}.tar.bz2
 Source1:	spice-xpi-client-spicec
-Patch0:		spice-automake-1.13.patch
+Patch0:		0.12.4-gold.patch
 
 # https://bugzilla.redhat.com/show_bug.cgi?id=613529
 ExclusiveArch:	%{ix86} x86_64

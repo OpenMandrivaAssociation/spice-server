@@ -1,2 +1,4 @@
+removed_sources:
+  spice-0.12.0.tar.bz2: f2d69d0a79eac83adbd33b6019634bc6e174ed6d
 sources:
-  "spice-0.12.0.tar.bz2": f2d69d0a79eac83adbd33b6019634bc6e174ed6d
+  spice-0.12.4.tar.bz2: 5825cfcf8a786697e45a43aaf372f23b5c441336
