@@ -26,6 +26,7 @@ BuildRequires:	pythonegg(pyparsing)
 BuildRequires:	alsa-oss-devel openssl-devel 
 BuildRequires:	jpeg-devel
 BuildRequires:	pkgconfig(xrandr)
+BuildRequires:	pkgconfig(glib-2.0)
 #BuildRequires:	cegui06-devel
 BuildRequires:	pkgconfig(libcacard)
 BuildRequires:	sasl-devel
