@@ -16,7 +16,7 @@ Source1:	spice-xpi-client-spicec
 Patch0:		0.12.4-gold.patch
 
 # https://bugzilla.redhat.com/show_bug.cgi?id=613529
-ExclusiveArch:	%{ix86} x86_64
+ExclusiveArch:	%{ix86} x86_64 armv6l armv7l armv7hl
 
 BuildRequires:	pkgconfig
 BuildRequires:	spice-protocol >= 0.9.1
@@ -91,9 +91,7 @@ mkdir spice-common/spice-protocol/m4
 %build
 autoreconf -ifv
 %configure2_5x --enable-smartcard --disable-werror
-make -C spice-common WARN_CFLAGS='' %{?_smp_mflags}
-make -C client WARN_CFLAGS='' %{?_smp_mflags}
-%make LIBS="-lpthread"
+%make WARN_CFLAGS='' V=1 LIBS="-lX11 -lXext -lXrandr -lXrender -lXfixes"
 
 %install
 make DESTDIR=%{buildroot} -C client install
