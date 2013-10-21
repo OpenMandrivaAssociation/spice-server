@@ -6,7 +6,7 @@
 
 Name:		spice-server
 Version:	0.12.4
-Release:	1
+Release:	2
 Summary:	Implements the SPICE protocol
 Group:		Networking/Remote access
 License:	LGPLv2+
@@ -72,7 +72,7 @@ to be a SPICE server.
 Summary:	Header files, libraries and development documentation for spice-server
 Group:		Development/C
 Requires:	%libname = %{version}-%{release}
-Requires:	pkgconfig
+Requires:	pkgconfig(libcacard)
 Provides:	%name-devel = %version-%release
 
 
