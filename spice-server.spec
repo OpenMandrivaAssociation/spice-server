@@ -1,19 +1,19 @@
 %define major 1
 %define Werror_cflags %nil
+%define _disable_ld_no_undefined 1
 
 %define libname %mklibname %{name} %major
 %define libnamedev %mklibname %{name} -d
 
 Name:		spice-server
-Version:	0.12.4
-Release:	8
+Version:	0.12.5
+Release:	1
 Summary:	Implements the SPICE protocol
 Group:		Networking/Remote access
 License:	LGPLv2+
 URL:		http://www.spice-space.org/
 Source0:	http://www.spice-space.org/download/releases/spice-%{version}.tar.bz2
 Source1:	spice-xpi-client-spicec
-Patch0:		0.12.4-gold.patch
 
 # https://bugzilla.redhat.com/show_bug.cgi?id=613529
 ExclusiveArch:	%{ix86} x86_64 armv6l armv7l armv7hl
@@ -22,7 +22,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	spice-protocol >= 0.9.1
 BuildRequires:	celt051-devel
 BuildRequires:	pixman-devel
-BuildRequires:	pythonegg(pyparsing)
+BuildRequires:	python3egg(pyparsing)
 BuildRequires:	alsa-oss-devel openssl-devel 
 BuildRequires:	jpeg-devel
 BuildRequires:	pkgconfig(xrandr)
@@ -85,14 +85,12 @@ using spice-server, you will need to install spice-server-devel.
 %setup -q -n spice-%{version}
 %apply_patches
 mkdir spice-common/spice-protocol/m4
-#% patch9 -p1
-#% patch10 -p1
 
 
 %build
-autoreconf -ifv
-%configure2_5x --enable-smartcard --disable-werror
-%make WARN_CFLAGS='' V=1 LIBS="-lX11 -lXext -lXrandr -lXrender -lXfixes"
+export PYTHON=%__python3
+%configure --enable-smartcard --disable-werror
+%make WARN_CFLAGS='' V=1 LIBS="-lX11 -lXext -lXrandr -lXrender -lXfixes -lasound"
 
 %install
 make DESTDIR=%{buildroot} -C client install
