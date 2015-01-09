@@ -7,7 +7,7 @@
 
 Name:		spice-server
 Version:	0.12.5
-Release:	3
+Release:	4
 Summary:	Implements the SPICE protocol
 Group:		Networking/Remote access
 License:	LGPLv2+
@@ -89,6 +89,8 @@ mkdir spice-common/spice-protocol/m4
 
 %build
 export PYTHON=%__python3
+export CC=gcc
+export CXX=g++
 %configure --enable-smartcard --disable-werror
 %make WARN_CFLAGS='' V=1 LIBS="-lX11 -lXext -lXrandr -lXrender -lXfixes -lasound"
 
