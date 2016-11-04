@@ -7,7 +7,7 @@
 %define libnamedev %mklibname %{name} -d
 
 Name:		spice-server
-Version:	0.12.8
+Version:	0.13.2
 Release:	1
 Summary:	Implements the SPICE protocol
 Group:		Networking/Remote access
@@ -16,7 +16,7 @@ URL:		http://www.spice-space.org/
 Source0:	http://www.spice-space.org/download/releases/spice-%{version}.tar.bz2
 
 # https://bugzilla.redhat.com/show_bug.cgi?id=613529
-ExclusiveArch:	%{ix86} x86_64 armv6l armv7l armv7hl
+ExclusiveArch:	%{ix86} x86_64 %{armx}
 
 BuildRequires:	pkgconfig
 BuildRequires:	spice-protocol >= 0.9.1
