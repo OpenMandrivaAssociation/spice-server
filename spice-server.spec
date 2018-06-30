@@ -31,6 +31,7 @@ BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(libcacard)
 BuildRequires:	sasl-devel
 BuildRequires:	pkgconfig(xfixes)
+BuildRequires:	pkgconfig(zlib)
 
 %description
 The Simple Protocol for Independent Computing Environments (SPICE) is
