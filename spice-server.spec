@@ -7,20 +7,19 @@
 %define libnamedev %mklibname %{name} -d
 
 Name:		spice-server
-Version:	0.14.0
-Release:	3
+Version:	0.14.1
+Release:	1
 Summary:	Implements the SPICE protocol
 Group:		Networking/Remote access
 License:	LGPLv2+
 URL:		http://www.spice-space.org/
-Source0:	http://www.spice-space.org/download/releases/spice-%{version}.tar.bz2
+Source0:	http://www.spice-space.org/download/releases/%{name}/spice-%{version}.tar.bz2
 
 # https://bugzilla.redhat.com/show_bug.cgi?id=613529
 ExclusiveArch:	%{ix86} x86_64 %{armx}
 
 BuildRequires:	pkgconfig
-BuildRequires:	spice-protocol >= 0.9.1
-BuildRequires:	celt051-devel
+BuildRequires:	spice-protocol >= 0.12.14
 BuildRequires:	pixman-devel
 BuildRequires:	python3egg(pyparsing)
 BuildRequires:	alsa-oss-devel openssl-devel 
@@ -33,6 +32,9 @@ BuildRequires:	sasl-devel
 BuildRequires:	pkgconfig(xfixes)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	pkgconfig(alsa)
+BuildRequires:	pkgconfig(liblz4)
+BuildRequires:	pkgconfig(opus)
+BuildRequires:	pkgconfig(gstreamer-1.0)
 
 %description
 The Simple Protocol for Independent Computing Environments (SPICE) is
@@ -77,7 +79,7 @@ using spice-server, you will need to install spice-server-devel.
 export PYTHON=%__python3
 export CC=gcc
 export CXX=g++
-%configure --enable-smartcard --disable-werror
+%configure --enable-smartcard --disable-werror --disable-celt051
 %make WARN_CFLAGS='' V=1 LIBS="-lX11 -lXext -lXrandr -lXrender -lXfixes -lasound"
 
 %install
