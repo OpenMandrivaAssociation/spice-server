@@ -35,6 +35,10 @@ BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(liblz4)
 BuildRequires:	pkgconfig(opus)
 BuildRequires:	pkgconfig(gstreamer-1.0)
+BuildRequires:  pkgconfig(gstreamer-base-1.0)
+BuildRequires:  pkgconfig(gstreamer-app-1.0)
+BuildRequires:  pkgconfig(gstreamer-audio-1.0)
+BuildRequires:  pkgconfig(gstreamer-video-1.0)
 
 %description
 The Simple Protocol for Independent Computing Environments (SPICE) is
