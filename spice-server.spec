@@ -16,7 +16,7 @@ URL:		http://www.spice-space.org/
 Source0:	http://www.spice-space.org/download/releases/%{name}/spice-%{version}.tar.bz2
 
 # https://bugzilla.redhat.com/show_bug.cgi?id=613529
-ExclusiveArch:	%{ix86} x86_64 %{armx}
+ExclusiveArch:	%{ix86} %{x86_64} %{armx}
 
 BuildRequires:	pkgconfig
 BuildRequires:	spice-protocol >= 0.12.14
