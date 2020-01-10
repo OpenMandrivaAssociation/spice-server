@@ -76,7 +76,7 @@ using spice-server, you will need to install spice-server-devel.
 
 %prep
 %setup -q -n spice-%{version}
-%apply_patches
+%autopatch -p1
 
 
 %build
