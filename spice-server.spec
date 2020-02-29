@@ -92,7 +92,7 @@ rm -f %{buildroot}%{_libdir}/libspice-server.a
 rm -f %{buildroot}%{_libdir}/libspice-server.la
 
 %files -n %libname
-%doc COPYING README NEWS
+%doc COPYING README
 %{_libdir}/libspice-server.so.%{major}*
 
 %files -n %libnamedev
