@@ -7,7 +7,7 @@
 %define libnamedev %mklibname %{name} -d
 
 Name:		spice-server
-Version:	0.14.1
+Version:	0.14.3
 Release:	1
 Summary:	Implements the SPICE protocol
 Group:		Networking/Remote access
@@ -84,10 +84,10 @@ export PYTHON=%__python3
 export CC=gcc
 export CXX=g++
 %configure --enable-smartcard --disable-werror --disable-celt051
-%make WARN_CFLAGS='' V=1 LIBS="-lX11 -lXext -lXrandr -lXrender -lXfixes -lasound"
+%make_build WARN_CFLAGS='' V=1 LIBS="-lX11 -lXext -lXrandr -lXrender -lXfixes -lasound"
 
 %install
-%makeinstall_std
+%make_install
 rm -f %{buildroot}%{_libdir}/libspice-server.a
 rm -f %{buildroot}%{_libdir}/libspice-server.la
 
