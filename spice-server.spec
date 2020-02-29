@@ -21,7 +21,7 @@ ExclusiveArch:	%{ix86} %{x86_64} %{armx}
 BuildRequires:	pkgconfig
 BuildRequires:	spice-protocol >= 0.12.14
 BuildRequires:	pixman-devel
-BuildRequires:	python3egg(pyparsing)
+BuildRequires:	python3dist(pyparsing)
 BuildRequires:	alsa-oss-devel openssl-devel 
 BuildRequires:	jpeg-devel
 BuildRequires:	pkgconfig(xrandr)
