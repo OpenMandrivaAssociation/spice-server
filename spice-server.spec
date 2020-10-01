@@ -8,7 +8,7 @@
 
 Name:		spice-server
 Version:	0.14.3
-Release:	1
+Release:	2
 Summary:	Implements the SPICE protocol
 Group:		Networking/Remote access
 License:	LGPLv2+
@@ -18,12 +18,12 @@ Source0:	http://www.spice-space.org/download/releases/%{name}/spice-%{version}.t
 # https://bugzilla.redhat.com/show_bug.cgi?id=613529
 #ExclusiveArch:	%{ix86} %{x86_64} %{armx}
 
-BuildRequires:	pkgconfig
 BuildRequires:	spice-protocol >= 0.12.14
-BuildRequires:	pixman-devel
+BuildRequires:	pkgconfig(pixman-1)
 BuildRequires:	python3dist(pyparsing)
-BuildRequires:	alsa-oss-devel openssl-devel 
-BuildRequires:	jpeg-devel
+BuildRequires:	alsa-oss-devel
+BuildRequires:	pkgconfig(openssl)
+BuildRequires:	pkgconfig(pixman-1)
 BuildRequires:	pkgconfig(xrandr)
 BuildRequires:	pkgconfig(glib-2.0)
 #BuildRequires:	cegui06-devel
@@ -77,7 +77,6 @@ using spice-server, you will need to install spice-server-devel.
 %prep
 %setup -q -n spice-%{version}
 %autopatch -p1
-
 
 %build
 export PYTHON=%__python3
