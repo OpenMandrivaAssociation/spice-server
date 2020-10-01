@@ -22,6 +22,7 @@ BuildRequires:	spice-protocol >= 0.12.14
 BuildRequires:	pkgconfig(pixman-1)
 BuildRequires:	python3dist(pyparsing)
 BuildRequires:	alsa-oss-devel
+BuildRequires:	pkgconfig(libjpeg)
 BuildRequires:	pkgconfig(openssl)
 BuildRequires:	pkgconfig(pixman-1)
 BuildRequires:	pkgconfig(xrandr)
@@ -35,10 +36,10 @@ BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(liblz4)
 BuildRequires:	pkgconfig(opus)
 BuildRequires:	pkgconfig(gstreamer-1.0)
-BuildRequires:  pkgconfig(gstreamer-base-1.0)
-BuildRequires:  pkgconfig(gstreamer-app-1.0)
-BuildRequires:  pkgconfig(gstreamer-audio-1.0)
-BuildRequires:  pkgconfig(gstreamer-video-1.0)
+BuildRequires:	pkgconfig(gstreamer-base-1.0)
+BuildRequires:	pkgconfig(gstreamer-app-1.0)
+BuildRequires:	pkgconfig(gstreamer-audio-1.0)
+BuildRequires:	pkgconfig(gstreamer-video-1.0)
 
 %description
 The Simple Protocol for Independent Computing Environments (SPICE) is
