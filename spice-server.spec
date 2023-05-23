@@ -7,8 +7,8 @@
 %define libnamedev %mklibname %{name} -d
 
 Name:		spice-server
-Version:	0.15.1
-Release:	2
+Version:	0.15.2
+Release:	1
 Summary:	Implements the SPICE protocol
 Group:		Networking/Remote access
 License:	LGPLv2+
