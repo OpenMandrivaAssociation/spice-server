@@ -12,7 +12,7 @@ Release:	1
 Summary:	Implements the SPICE protocol
 Group:		Networking/Remote access
 License:	LGPLv2+
-URL:		http://www.spice-space.org/
+URL:		https://www.spice-space.org/
 Source0:	http://www.spice-space.org/download/releases/%{name}-server/spice-%{version}.tar.bz2
 
 BuildRequires:	spice-protocol >= 0.12.14
