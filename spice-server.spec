@@ -15,6 +15,11 @@ License:	LGPLv2+
 URL:		https://www.spice-space.org/
 Source0:	http://www.spice-space.org/download/releases/%{name}-server/spice-%{version}.tar.bz2
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	spice-protocol >= 0.12.14
 BuildRequires:	pkgconfig(pixman-1)
 BuildRequires:	python3dist(pyparsing)
